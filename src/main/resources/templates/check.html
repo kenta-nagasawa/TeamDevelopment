@@ -5,7 +5,7 @@
     <meta charset = "UTF-8">
     <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel = "stylesheet" href = "input.css" type = "text/css">
+    <link rel = "stylesheet" href = "check.css" type = "text/css">
 </head>
 <body>
     <!-- header -->
@@ -16,7 +16,7 @@
     <div class ="main">
         <!-- 「自己紹介の内容を記入してください」と表示する -->
         <h1>
-            <a>自己紹介の内容を記入してください</a>
+            <a>自己紹介登録確認</a>
         </h1>
         <form th:action = "@{/check}" method="post">
         <!-- 名前、フリガナ、性別、趣味、一言を表示する-->
@@ -25,10 +25,10 @@
                 <li>
                     <a>名前</a>
                     <!-- 「必須 」項目を表示する-->
-                    <div class = "box">必須</div>
+                    <div class = "box_sub"></div>
                     <!-- 入力欄を追加する -->
                     <b>
-                        <input type = "text" id = "name"  name = "name">
+                        <div class = "name" th:text="${name}"></div>
                     </b>
                     
                 </li>
@@ -37,10 +37,10 @@
                 <li>
                     <a>フリガナ</a>
                      <!-- 「必須 」項目を表示する-->
-                    <div class = "box">必須</div>
+                     <div class = "box_sub"></div>
                      <!-- 入力欄を追加する -->
                     <b>
-                        <input type = "text"  id = "name_sub" name = "name_sub">
+                        <div class = "name_sub" th:text="${name_sub}"></div>
                     </b>
                 </li>
             </ul>
@@ -50,61 +50,30 @@
                      <!-- 「必須 」の分の余白を調整する-->
                     <div class = "box_sub"></div>
                     <!-- 男性、女性を選択できるようにする -->
-                    <div class = "checkbox">
-                        <b id = "checkbox">
-                            <input type="radio" name="gender" value="male">男性
-                        </b>
-                        <b id = "checkbox">
-                            <input type="radio" name="gender" value="female">女性
-                        </b>
-                    </div>
+                    <b>
+                        <div class = "gender" th:text="${gender}"></div>
+                    </b>
                 </li>
             </ul>
             <ul>
                 <li>
                     <a>趣味</a>
                      <!-- 「必須 」項目を表示する-->
-                    <div class = "box">必須</div>
+                    <div class = "box_sub"></div>
                     <!-- 趣味を表示し、チェックボックスで複数選べるようにする -->
-                    <div class = "checkbox">
-                        <b id = "checkbox">
-                            <input type="checkbox" name="hobby" value="sports">スポーツ
-                        </b>
-                        <b id = "checkbox">
-                            <input type="checkbox" name="hobby" value="game">ゲーム
-                        </b>
-                        <b id = "checkbox">
-                            <input type="checkbox" name="hobby" value="comics">漫画
-                        </b>
-                        <b id = "checkbox">
-                            <input type="checkbox" name="hobby" value="animation">アニメ
-                        </b>
-                        <b id = "checkbox">
-                            <input type="checkbox" name="hobby" value="movie">映画
-                        </b>
-                        <b id = "checkbox">
-                            <input type="checkbox" name="hobby" value="cooking">料理
-                        </b>
-                        <b id = "checkbox">
-                            <input type="checkbox" name="hobby" value="drive">ドライブ
-                        </b>
-                        <b id = "checkbox">
-                            <input type="checkbox" name="hobby" value="tv">テレビ
-                        </b>
-                        <b id = "checkbox">
-                            <input type="checkbox" name="hobby" value="karaoke">カラオケ
-                        </b>
-                    </div>
+                    <b>
+                        <div class = "hobby" th:text="${hobby}"></div>
+                    </b>
                 </li>
             </ul>
             <ul>
                 <li>
                     <a>一言</a>
                     <!-- 「必須 」の分の余白を調整する-->
-                    <div class = "box_sub"></div>
+                    <div class = "box_sub" th:text="${comment}"></div>
                     <!-- 入力欄を追加する -->
                     <b>
-                        <textarea name = "comment" id = "comment"></textarea>
+                        <div class = "comment"></div>
                     </b>
                 </li>
             </ul>

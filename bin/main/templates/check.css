@@ -13,6 +13,9 @@ header{
     font-weight: bold;
 }
 /* ヘッダー以外 */
+body{
+    background-color: rgba(235, 232, 232, 0.904);
+}
 /* h1の上下の外余白を100px50px追加し、中央寄せ、フォントサイズ20px、フォントを細くする */
 h1{
     margin-top: 100px;
@@ -56,19 +59,26 @@ li{
     align-items: center;
 }
 /* 名前、フリガナの入力欄を横600px縦30pxにする */
-#name{
+.name,.name_sub,.gender{
     width: 600px; 
     height: 30px;
     font-size:15px;
-    border: solid 1px #000;
+    background-color: white;
+}
+.hobby{
+    width: 600px; 
+    height: 60px;
+    font-size:15px;
+    background-color: white;
 }
 /* コメント入力欄の大きさを縦150px横600pxにして、入力文字を自動で折り返すようにする */
-#comment{
+.comment{
     width: 600px; 
     height: 150px;
     overflow-wrap: break-word;
     word-wrap: break-word;
     font-size:15px;
+    background-color:white;
 }
 /* 名前、フリガナ、性別、趣味、一言の位置を調整する */
 a{
@@ -82,17 +92,7 @@ b{
     font-weight: lighter;
     font-size: 20px;
 }
-/* 趣味の並び替えをし、折り返しをするようにする */
-.checkbox{
-    width:650px;
-    display: flex;
-    flex-wrap: wrap;
-    gap:30px 0;
-}
-/* 趣味の選択が五個ずつ表示されるようにする */
-#checkbox{
-    width: 20%;
-}
+
 /* 戻る、次へのボタンの装飾 */
 #button{
     width: 200px;

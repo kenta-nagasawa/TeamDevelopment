@@ -18,7 +18,7 @@
         <h1>
             <a>自己紹介の内容を記入してください</a>
         </h1>
-        <form action = "/check" method="post">
+        <form th:action = "@{/check}" method="post">
         <!-- 名前、フリガナ、性別、趣味、一言を表示する-->
         <h2>
             <ul>
@@ -40,7 +40,7 @@
                     <div class = "box">必須</div>
                      <!-- 入力欄を追加する -->
                     <b>
-                        <input type = "text"  id = "name" name = "name_sub">
+                        <input type = "text"  id = "name_sub" name = "name_sub">
                     </b>
                 </li>
             </ul>

@@ -13,6 +13,9 @@ header{
     font-weight: bold;
 }
 /* ヘッダー以外 */
+body{
+    background-color: rgba(235, 232, 232, 0.904);
+}
 /* h1の上下の外余白を100px50px追加し、中央寄せ、フォントサイズ20px、フォントを細くする */
 h1{
     margin-top: 100px;
@@ -69,7 +72,7 @@ li{
     align-items: center;
 }
 /* 名前、フリガナの入力欄を横600px縦30pxにする */
-#name{
+#name,#name_sub{
     width: 600px; 
     height: 30px;
     font-size:15px;
