@@ -5,20 +5,25 @@
     <meta charset = "UTF-8">
     <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel = "stylesheet" href = "input.css" type = "text/css">
+    <link rel = "stylesheet" th:href = "@{/input.css}" type = "text/css">
 </head>
 <body>
     <!-- header -->
     <header>
         <div class = "head_title">JavaTeamDevelopment</div>
     </header>
+        <table>
+        <tr th:if="${validationError}" th:each="error : ${validationError}">
+            <td style="color: red;" th:text="${error}"></td>
+        </tr>
+    </table>
     <!-- 内容 -->
     <div class ="main">
         <!-- 「自己紹介の内容を記入してください」と表示する -->
         <h1>
             <a>自己紹介の内容を記入してください</a>
         </h1>
-        <form th:action = "@{/check}" method="post">
+        <form th:action = "@{/user/create}" th:method = "post" th:object = "${formRequest}">
         <!-- 名前、フリガナ、性別、趣味、一言を表示する-->
         <h2>
             <ul>
@@ -28,9 +33,8 @@
                     <div class = "box">必須</div>
                     <!-- 入力欄を追加する -->
                     <b>
-                        <input type = "text" id = "name"  name = "name">
+                        <input type = "text" th:field = "*{name}">
                     </b>
-                    
                 </li>
             </ul>
             <ul>
@@ -40,7 +44,7 @@
                     <div class = "box">必須</div>
                      <!-- 入力欄を追加する -->
                     <b>
-                        <input type = "text"  id = "name_sub" name = "name_sub">
+                        <input type = "text"  th:field = "*{name_sub}">
                     </b>
                 </li>
             </ul>
@@ -52,10 +56,10 @@
                     <!-- 男性、女性を選択できるようにする -->
                     <div class = "checkbox">
                         <b id = "checkbox">
-                            <input type="radio" name="gender" value="male">男性
+                            <input type = "radio" name = "gender" value = "男性">男性
                         </b>
                         <b id = "checkbox">
-                            <input type="radio" name="gender" value="female">女性
+                            <input type = "radio" name = "gender" value = "女性">女性
                         </b>
                     </div>
                 </li>
@@ -68,31 +72,31 @@
                     <!-- 趣味を表示し、チェックボックスで複数選べるようにする -->
                     <div class = "checkbox">
                         <b id = "checkbox">
-                            <input type="checkbox" name="hobby" value="sports">スポーツ
+                            <input type = "checkbox" name = "hobby" value = "スポーツ">スポーツ
                         </b>
                         <b id = "checkbox">
-                            <input type="checkbox" name="hobby" value="game">ゲーム
+                            <input type = "checkbox" name = "hobby" value = "ゲーム">ゲーム
                         </b>
                         <b id = "checkbox">
-                            <input type="checkbox" name="hobby" value="comics">漫画
+                            <input type = "checkbox" name = "hobby" value = "漫画">漫画
                         </b>
                         <b id = "checkbox">
-                            <input type="checkbox" name="hobby" value="animation">アニメ
+                            <input type = "checkbox" name = "hobby" value = "アニメ">アニメ
                         </b>
                         <b id = "checkbox">
-                            <input type="checkbox" name="hobby" value="movie">映画
+                            <input type = "checkbox" name = "hobby" value = "映画">映画
                         </b>
                         <b id = "checkbox">
-                            <input type="checkbox" name="hobby" value="cooking">料理
+                            <input type = "checkbox" name = "hobby" value = "料理">料理
                         </b>
                         <b id = "checkbox">
-                            <input type="checkbox" name="hobby" value="drive">ドライブ
+                            <input type = "checkbox" name = "hobby" value = "ドライブ">ドライブ
                         </b>
                         <b id = "checkbox">
-                            <input type="checkbox" name="hobby" value="tv">テレビ
+                            <input type = "checkbox" name = "hobby" value = "テレビ">テレビ
                         </b>
                         <b id = "checkbox">
-                            <input type="checkbox" name="hobby" value="karaoke">カラオケ
+                            <input type = "checkbox" name = "hobby" value = "カラオケ">カラオケ
                         </b>
                     </div>
                 </li>
@@ -104,7 +108,7 @@
                     <div class = "box_sub"></div>
                     <!-- 入力欄を追加する -->
                     <b>
-                        <textarea name = "comment" id = "comment"></textarea>
+                        <textarea th:field = "*{comment}"></textarea>
                     </b>
                 </li>
             </ul>
@@ -112,7 +116,7 @@
         <!-- 戻る、次へのボタンを表示する -->
         <h3>
             <div class = "button">
-                <input type = "submit" value = "戻る" id = "button">
+                <input type = "button" onclick = "window.history.back();" value = "戻る"  id = "button">
                 <input type = "submit" value = "次へ" id = "button">
             </div>
         </h3>

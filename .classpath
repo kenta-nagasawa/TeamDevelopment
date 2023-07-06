@@ -14,17 +14,39 @@
 	</classpathentry>
 	<classpathentry kind="src" output="bin/test" path="src/test/java">
 		<attributes>
+			<attribute name="test" value="true"/>
 			<attribute name="gradle_scope" value="test"/>
 			<attribute name="gradle_used_by_scope" value="test"/>
-			<attribute name="test" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17/"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17/">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/81905/Downloads/postgresql-42.6.0.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.buildship.core.gradleclasspathcontainer">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/81905/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy/1.14.5/28a424c0c4f362568e904d992c239c996cf7adc7/byte-buddy-1.14.5.jar" sourcepath="C:/Users/81905/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy/1.14.5/2ffbe5b4f4fe115ca0aa000e9de5c13eb6fd924c/byte-buddy-1.14.5-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/81905/.gradle/caches/modules-2/files-2.1/org.hibernate.orm/hibernate-core/6.2.5.Final/3c0d24dd2f66920aeeee666779ca7391f20bc69c/hibernate-core-6.2.5.Final.jar" sourcepath="C:/Users/81905/.gradle/caches/modules-2/files-2.1/org.hibernate.orm/hibernate-core/6.2.5.Final/eec62bdda692f3c10bdd58b059a877d6285e2647/hibernate-core-6.2.5.Final-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/81905/Downloads/validation-api-2.0.1.Final.jar"/>
 	<classpathentry kind="output" path="bin/default"/>
 </classpath>

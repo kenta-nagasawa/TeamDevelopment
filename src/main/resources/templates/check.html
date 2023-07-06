@@ -5,7 +5,7 @@
     <meta charset = "UTF-8">
     <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel = "stylesheet" href = "check.css" type = "text/css">
+    <link rel = "stylesheet" th:href = "@{/check.css}" type = "text/css">
 </head>
 <body>
     <!-- header -->
@@ -30,7 +30,6 @@
                     <b>
                         <div class = "name" th:text="${name}"></div>
                     </b>
-                    
                 </li>
             </ul>
             <ul>
@@ -70,10 +69,10 @@
                 <li>
                     <a>一言</a>
                     <!-- 「必須 」の分の余白を調整する-->
-                    <div class = "box_sub" th:text="${comment}"></div>
+                    <div class = "box_sub"></div>
                     <!-- 入力欄を追加する -->
                     <b>
-                        <div class = "comment"></div>
+                        <div class = "comment" th:text="${comment}"></div>
                     </b>
                 </li>
             </ul>
@@ -81,7 +80,7 @@
         <!-- 戻る、次へのボタンを表示する -->
         <h3>
             <div class = "button">
-                <input type = "submit" value = "戻る" id = "button">
+                <input type = "button" onclick = "window.history.back();" value = "戻る"  id = "button">
                 <input type = "submit" value = "次へ" id = "button">
             </div>
         </h3>
