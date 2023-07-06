@@ -25,7 +25,7 @@ public class formRequest implements Serializable {
     * 名前
     */
     @NotEmpty(message = "フリガナを入力してください")
-    @Size(max = 10, message = "名前は10文字以内で入力してください")
+    @Size(max = 20, message = "名前は20文字以内で入力してください")
     private String name_sub;
     /**
     * 名前
@@ -35,6 +35,6 @@ public class formRequest implements Serializable {
     /**
     * 住所
     */
-    @Size(max = 100, message = "コメントは100文字以内で入力してください")
+    @Size(max = 300, message = "コメントは300文字以内で入力してください")
     private String comment;
 }

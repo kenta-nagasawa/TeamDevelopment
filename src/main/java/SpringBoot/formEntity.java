@@ -24,37 +24,37 @@ public class formEntity implements Serializable {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long user_id;
   /**
-   * 住所
+   * 名前
    */
   @Column(name = "name")
   private String name;
   /**
-   * 電話番号
+   * フリガナ
    */
   @Column(name = "kana")
   private String kana;
   /**
-   * 更新日時
+   * 性別
    */
   @Column(name = "gender")
   private String gender;
   /**
-   * 登録日時
+   * 趣味
    */
   @Column(name = "hobby")
   private String hobby;
   /**
-   * 削除日時
+   * コメント
    */
   @Column(name = "word")
   private String worde;
   /**
-   * 削除日時
+   *
    */
   @Column(name = "created_at")
   private String created_at;
   /**
-   * 削除日時
+   * 
    */
   @Column(name = "updated_at")
   private String updated_at;
