@@ -27,6 +27,11 @@ public class formController {
 		model.addAttribute("formRequest", new formRequest());
 		return "input";
 	}
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String displayLogin(Model model) {
+		model.addAttribute("formRequest", new formRequest());
+		return "login";
+	}
 
 	@RequestMapping(value = "/user/create", method = RequestMethod.POST)
 	public String create(@Validated @ModelAttribute formRequest formRequest, BindingResult result,
