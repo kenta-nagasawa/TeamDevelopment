@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -19,6 +20,23 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class formController {
 
+
+	@GetMapping("/login")
+    public String showLoginPage() {
+        return "login.html";
+    }
+	@GetMapping("/new")
+    public String showNewPage() {
+        return "new.html";
+    }
+	@GetMapping("/top")
+    public String showTopPage() {
+        return "top.html";
+    }
+	@GetMapping("/done")
+    public String showDonePage() {
+        return "done.html";
+        }
 	@Autowired
 	private formService service;
 
