@@ -100,6 +100,13 @@ a {
 .done-box_return {
   margin-top: 20px;
 }
+
+.done-info{
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+}
+
 .done-box_return a {
   text-decoration: none;
   color: #7291f8;
