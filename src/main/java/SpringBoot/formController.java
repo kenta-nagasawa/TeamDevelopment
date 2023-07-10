@@ -20,7 +20,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class formController {
 
-
 	@GetMapping("/login")
     public String showLoginPage() {
         return "login.html";
