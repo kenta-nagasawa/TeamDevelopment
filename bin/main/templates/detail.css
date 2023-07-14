@@ -1,0 +1,81 @@
+/*ヘッダーの隙間をなくす*/
+body {
+	margin: 0;
+}
+
+/* ヘッダーの文字を右寄せ上下中央にし、バックグラウンドカラーをgrayにする*/
+header {
+	background-color: gray;
+	height: 90px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+/* タイトルの右余白を110px、テキストサイズを30pxにし、fontを太くする */
+.head_title {
+	margin-right: 110px;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+/* ヘッダー以外 */
+/* h1の上下の外余白を100px50px追加し、中央寄せ、フォントサイズ20px、フォントを細くする */
+h1 {
+	margin-top: 50px;
+	margin-bottom: 25px;
+	display: flex;
+	justify-content: center;
+	font-size: 25px;
+	font-weight: bold;
+}
+
+/* ヘッダーとの間を100px設ける */
+.main {
+	margin-top: 100px;
+}
+
+/*table 枠線一本　横幅600px 中央寄せ*/
+table {
+	margin: auto;
+	margin-bottom: 50px;
+	align-items: center;
+	border-collapse: collapse;
+	width: 500px;
+}
+
+/*table　見出し　縦幅50px 横幅20%*/
+th {
+	font-weight: lighter;
+	height: 50px;
+	width: 20%;
+}
+
+/*comment 縦幅100px*/
+.comment {
+	height: 100px;
+}
+
+/*ボタン　横並び　中央*/
+div {
+	display: flex;
+	justify-content: center;
+}
+
+/*ボタン　背景色　枠線なし 縦幅50px　横幅100px　間隔 文字の大きさ　太文字*/
+button {
+	background-color: rgba(61, 165, 235, 0.897);
+	border: none;
+	height: 60px;
+	width: 100px;
+	margin-right: 100px;
+	margin-bottom: 100px;
+	font-size: large;
+	font-weight: bold;
+}
+
+/*削除ボタン　背景色*/
+.deleted {
+	background-color: rgb(236, 142, 142);
+	margin-right: 0;
+}

@@ -1,0 +1,65 @@
+/*ヘッダーの隙間をなくす*/
+body {
+	margin: 0;
+}
+
+/* ヘッダーの文字を右寄せ上下中央にし、バックグラウンドカラーをgrayにする*/
+header {
+	background-color: gray;
+	height: 90px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+/* タイトルの右余白を110px、テキストサイズを30pxにし、fontを太くする */
+.head_title {
+	margin-right: 110px;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+/* ヘッダー以外 */
+/* h1の上下の外余白を100px50px追加し、中央寄せ、フォントサイズ20px、フォントを細くする */
+h1 {
+	margin-top: 100px;
+	margin-bottom: 50px;
+	display: flex;
+	justify-content: center;
+	font-size: 20px;
+	font-weight: bolder;
+}
+
+/* ヘッダーとの間を100px設ける */
+.main {
+	margin-top: 100px;
+}
+
+/*table 枠線一本　横幅600px　縦幅500px　中央寄せ*/
+table {
+	margin: auto;
+	margin-bottom: 100px;
+	align-items: center;
+	border-collapse: collapse;
+	width: 600px;
+	height: 500px;
+}
+
+/*table　見出し 背景色 太文字　縦幅45px 横幅50%*/
+th {
+	background-color: rgb(214, 214, 214);
+	font-weight: bold;
+	height: 45px;
+	width: 50%;
+}
+
+/*table データ　中央寄せ　縦幅25px*/
+td {
+	text-align: center;
+	height: 25px;
+}
+
+/*table データ　ID　文字色*/
+.ID {
+	color: rgb(0, 149, 255);
+}

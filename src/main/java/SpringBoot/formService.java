@@ -1,4 +1,6 @@
 package SpringBoot;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,5 +22,13 @@ public class formService {
 		user.setCreateDate(now);
 		user.setUpdateDate(now);
 		userRepository.save(user);
+	}
+	
+	/*
+	 * ユーザー情報　全検索
+	 * @return 検索結果
+	 */
+	public List<user> searchAll(){
+		return formRepository.findAll();
 	}
 }

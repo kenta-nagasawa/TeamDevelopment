@@ -33,8 +33,9 @@ public class formController {
 	 */
 	@GetMapping (value = "/list")
 	public String displayList(Model model) {
-		List<User> userlist = formService.searchAll();
+		List<user> userlist = formService.searchAll();
 		model.addAttribute("id", userlist);
+		return "list.html";
 	}
 	
 }
