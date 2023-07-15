@@ -1,39 +1,41 @@
-package SpringBoot;
+package com.example.demo.dto;
 
 import java.io.Serializable;
 
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import lombok.Data;
 
-/**
+/**ssss
 * ユーザー情報 リクエストデータ
 */
 @Data
-public class formRequest implements Serializable {
-
+public class FormRequest implements Serializable{
     /**
     * 名前
     */
     @NotEmpty(message = "名前を入力してください")
-    @Size(max = 10, message = "名前は10文字以内で入力してください")
+    @NotBlank(message = "名前を入力してください")
+    @Size(min=1,max=2, message = "名前は10文字以内で入力してください")
     private String name;
     
     /**
-    * 名前
+    * カナ
     */
     @NotEmpty(message = "フリガナを入力してください")
-    @Size(max = 20, message = "名前は20文字以内で入力してください")
-    private String name_sub;
+    @Size(max = 2, message = "名前は20文字以内で入力してください")
+    private String kana;
+    
     /**
-    * 名前
+    * 趣味
     */
     @NotNull(message = "趣味を選択してください")
     private String hobby;
     /**
-    * 住所
+    * コメント
     */
     @Size(max = 300, message = "コメントは300文字以内で入力してください")
     private String comment;

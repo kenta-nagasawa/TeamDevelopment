@@ -12,18 +12,13 @@
     <header>
         <div class = "head_title">JavaTeamDevelopment</div>
     </header>
-        <table>
-        <tr th:if="${validationError}" th:each="error : ${validationError}">
-            <td style="color: red;" th:text="${error}"></td>
-        </tr>
-    </table>
     <!-- 内容 -->
     <div class ="main">
         <!-- 「自己紹介の内容を記入してください」と表示する -->
         <h1>
             <a>自己紹介の内容を記入してください</a>
         </h1>
-        <form th:action = "@{/user/create}" th:method = "post" th:object = "${formRequest}">
+        <form th:action = "@{/user/create}" th:object = "${formRequest}" th:method = "post">
         <!-- 名前、フリガナ、性別、趣味、一言を表示する-->
         <h2>
             <ul>
@@ -44,7 +39,7 @@
                     <div class = "box">必須</div>
                      <!-- 入力欄を追加する -->
                     <b>
-                        <input type = "text"  th:field = "*{name_sub}">
+                        <input type = "text"  th:field = "*{kana}">
                     </b>
                 </li>
             </ul>
@@ -56,10 +51,10 @@
                     <!-- 男性、女性を選択できるようにする -->
                     <div class = "checkbox">
                         <b id = "checkbox">
-                            <input type = "radio" name = "gender" value = "男性">男性
+                            <input type = "radio" th:field = "*{gender}">男性
                         </b>
                         <b id = "checkbox">
-                            <input type = "radio" name = "gender" value = "女性">女性
+                            <input type = "radio" th:field = "*{gender}">女性
                         </b>
                     </div>
                 </li>
@@ -72,31 +67,31 @@
                     <!-- 趣味を表示し、チェックボックスで複数選べるようにする -->
                     <div class = "checkbox">
                         <b id = "checkbox">
-                            <input type = "checkbox" name = "hobby" value = "スポーツ">スポーツ
+                            <input type = "checkbox" th:field = "*{hobby}">スポーツ
                         </b>
                         <b id = "checkbox">
-                            <input type = "checkbox" name = "hobby" value = "ゲーム">ゲーム
+                            <input type = "checkbox" th:field = "*{hobby}">ゲーム
                         </b>
                         <b id = "checkbox">
-                            <input type = "checkbox" name = "hobby" value = "漫画">漫画
+                            <input type = "checkbox" th:field = "*{hobby}">漫画
                         </b>
                         <b id = "checkbox">
-                            <input type = "checkbox" name = "hobby" value = "アニメ">アニメ
+                            <input type = "checkbox" th:field = "*{hobby}">アニメ
                         </b>
                         <b id = "checkbox">
-                            <input type = "checkbox" name = "hobby" value = "映画">映画
+                            <input type = "checkbox" th:field = "*{hobby}">映画
                         </b>
                         <b id = "checkbox">
-                            <input type = "checkbox" name = "hobby" value = "料理">料理
+                            <input type = "checkbox" th:field = "*{hobby}">料理
                         </b>
                         <b id = "checkbox">
-                            <input type = "checkbox" name = "hobby" value = "ドライブ">ドライブ
+                            <input type = "checkbox" th:field = "*{hobby}">ドライブ
                         </b>
                         <b id = "checkbox">
-                            <input type = "checkbox" name = "hobby" value = "テレビ">テレビ
+                            <input type = "checkbox" th:field = "*{hobby}">テレビ
                         </b>
                         <b id = "checkbox">
-                            <input type = "checkbox" name = "hobby" value = "カラオケ">カラオケ
+                            <input type = "checkbox" th:field = "*{hobby}">カラオケ
                         </b>
                     </div>
                 </li>

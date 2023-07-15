@@ -12,18 +12,13 @@
     <header>
         <div class = "head_title">JavaTeamDevelopment</div>
     </header>
-        <table>
-        <tr th:if="${validationError}" th:each="error : ${validationError}">
-            <td style="color: red;" th:text="${error}"></td>
-        </tr>
-    </table>
     <!-- 内容 -->
     <div class ="main">
         <!-- 「自己紹介の内容を記入してください」と表示する -->
         <h1>
             <a>自己紹介の内容を記入してください</a>
         </h1>
-        <form th:action = "@{/user/create}" th:method = "post" th:object = "${formRequest}">
+        <form th:action = "@{/user/create}" th:object = "${FormRequest}" th:method = "post">
         <!-- 名前、フリガナ、性別、趣味、一言を表示する-->
         <h2>
             <ul>
@@ -32,6 +27,7 @@
                     <!-- 「必須 」項目を表示する-->
                     <div class = "box">必須</div>
                     <!-- 入力欄を追加する -->
+                    <span th:errors="*{name}" style="color: red;"></span>
                     <b>
                         <input type = "text" th:field = "*{name}">
                     </b>
@@ -44,7 +40,7 @@
                     <div class = "box">必須</div>
                      <!-- 入力欄を追加する -->
                     <b>
-                        <input type = "text"  th:field = "*{name_sub}">
+                        <input type = "text"  th:field = "*{kana}">
                     </b>
                 </li>
             </ul>

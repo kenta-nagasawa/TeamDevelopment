@@ -1,4 +1,4 @@
-package SpringBoot;
+package com.example.demo.entity;
 import java.io.Serializable;
 
 import jakarta.persistence.Column;
@@ -15,7 +15,7 @@ import lombok.Data;
 @Entity
 @Data
 @Table(name = "introductions")
-public class formEntity implements Serializable {
+public class FormEntity implements Serializable {
   /**
    * ID
    */
@@ -46,8 +46,8 @@ public class formEntity implements Serializable {
   /**
    * コメント
    */
-  @Column(name = "word")
-  private String worde;
+  @Column(name = "comment")
+  private String comment;
   /**
    *
    */

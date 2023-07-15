@@ -1,22 +1,18 @@
-package SpringBoot;
+package com.example.demo.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.ObjectError;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+
+import com.example.demo.dto.FormRequest;
 
 // 画面からHTTPリクエストを受け付けるため@Controllerアノテーションを付与する\s
 @Controller
-public class formController {
-
-	@Autowired
-	private formService service;
+public class FormController {
 	
 	@GetMapping("/new")
     public String showNewPage() {
@@ -33,29 +29,35 @@ public class formController {
 	
 	@GetMapping(value = "/input")
 	public String displayAdd(Model model) {
-		model.addAttribute("formRequest", new formRequest());
+		model.addAttribute("formRequest", new FormRequest());
 		return "input";
 	}
+	
 	@GetMapping(value = "/login")
 	public String displayLogin(Model model) {
-		model.addAttribute("formRequest", new formRequest());
+		model.addAttribute("formRequest", new FormRequest());
 		return "login";
 	}
-
-	@PostMapping(value = "/user/create")
-	public String create(@Validated @ModelAttribute formRequest formRequest, BindingResult result,
-			@RequestParam String name, String name_sub, String gender, String hobby, String comment, Model model) {
+	
+	@PostMapping("/user/create")
+	public String create(@ModelAttribute("formRequest") @Validated FormRequest formRequest,BindingResult result,Model model) {
 		if (result.hasErrors()) {
-			for (ObjectError error : result.getAllErrors()) {
-				model.addAttribute("error", error);
-			}
 			return "input";
 		}
-		return service.outputCheck(name, name_sub, gender, hobby, comment, model);
-		
+//		model.addAttribute("name", request.getName());
+//		model.addAttribute("kana", request.getKana());
+//		model.addAttribute("hobby", request.getHobby());
+//		model.addAttribute("comment", request.getComment());
+		return "check";
 	}
+	
 	@PostMapping(value = "/user/done")
-	public String showDone(Model model) {
-		return service.outputDone(model);
+	public String showDone(Model model,FormRequest request) {
+//		model.addAttribute("name", request.getName());
+//		model.addAttribute("kana", request.getKana());
+//		model.addAttribute("gender", request.getGender());		
+//		model.addAttribute("hobby", request.getHobby());
+//		model.addAttribute("comment", request.getComment());
+		return "done";
 	}
 }
