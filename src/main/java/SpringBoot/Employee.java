@@ -1,6 +1,5 @@
 package SpringBoot;
 import lombok.Data;
-import java.io.Serializable;
 
 @Entity
 @Data // Getter, Setterの省略

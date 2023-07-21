@@ -55,5 +55,19 @@
 			<attribute name="gradle_used_by_scope" value=""/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/naoto/.m2/repository/org/springframework/spring-context/6.0.2/spring-context-6.0.2.jar" sourcepath="C:/Users/naoto/.m2/repository/org/springframework/spring-context/6.0.2/spring-context-6.0.2-sources.jar">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="maven.groupId" value="org.springframework"/>
+			<attribute name="maven.artifactId" value="spring-context"/>
+			<attribute name="maven.version" value="6.0.2"/>
+			<attribute name="maven.scope" value="compile"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/naoto/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.28/a2ff5da8bcd8b1b26f36b806ced63213362c6dcc/lombok-1.18.28.jar" sourcepath="C:/Users/naoto/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.28/9bfef13043bb35cb50cea6589d2fb4bad8fce5b3/lombok-1.18.28-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="bin/default"/>
 </classpath>
