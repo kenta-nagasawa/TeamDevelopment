@@ -16,13 +16,15 @@
 
 	<h1>自己紹介登録者一覧</h1>
 	<table border="1">
+		<thead>
 		<tr>
 			<th>ID</th>
 			<th>名前</th>
 		</tr>
-		<tr>
-			<td class="ID">person</td>
-			<td></td>
+		</thead>
+		<tr  th:each="user : ${userlist}" th:object="${user}" class="align-middle">
+			<td th:text="*{user_id}" class="ID"></td>
+			<td th:text="*{name}"></td>
 		</tr>
 		<tr>
 			<td class="ID"></td>

@@ -1,6 +1,7 @@
 package SpringBoot;
 import lombok.Data;
 
+
 @Entity
 @Data // Getter, Setterの省略
 @Table(name = "user")
