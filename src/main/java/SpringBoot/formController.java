@@ -38,4 +38,14 @@ public class formController {
 		return "list.html";
 	}
 	
+	/*
+	 * 詳細　表示
+	 * 
+	 */
+	@GetMapping (value = "/detail")
+	public String displayDetail(Model model) {
+		List<introduction> detail = formService.searchAll();
+		model.addAttribute("id", detail);
+		return "detail.html";
+	}
 }
