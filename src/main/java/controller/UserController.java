@@ -22,8 +22,6 @@ public class UserController {
         // 登録が成功したらログインページへリダイレクト
         return "redirect:/login"; 
     }
-    
-    
 }
 
 
