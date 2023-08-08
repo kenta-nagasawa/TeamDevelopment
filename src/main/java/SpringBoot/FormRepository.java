@@ -6,6 +6,5 @@ import org.springframework.stereotype.Repository;
 	 * ユーザー情報 Repository
 	 */
 	@Repository
-	public interface formRepository extends JpaRepository<formEntity, Long> {
-	
+	public interface FormRepository extends JpaRepository<FormEntity, Integer> {
 }

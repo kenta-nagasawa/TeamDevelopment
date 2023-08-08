@@ -1,11 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/done.css">
+  <title>チーム開発</title>
 </head>
 <body>
-    
+
+  <!-- header -->
+  <header class="header">
+    <div class="header-icon"><img src="/img/図1.png" alt=""></div>
+    <div class = "header-title">JavaTeamDevelopment</div>
+  </header>
+
+
+  <!-- main -->
+  <div class="main">
+    <div class="done-box">
+      <div class="done-box_head">自己紹介の登録が完了しました！</div>
+      <div class="done-box_body">
+        <p class="done-box_message">下記内容の自己紹介の登録が完了しました！</p>
+        <div class="done-box_info">
+          <ul class="done-info">
+            <li >管理番号：</li>
+            <li th:field="*{introduction_id}"></li>
+          </ul>
+          <ul class="done-info">
+            <li >名前：</li>
+            <li th:field="*{name}"></li>
+          </ul>
+          <ul class="done-info">
+            <li >フリガナ：</li>
+            <li th:field="*{kana}"></li>
+          </ul>
+          <ul class="done-info">
+            <li >性別：</li>
+            <li th:field="*{gender}"></li>
+          </ul>
+          <ul class="done-info">
+            <li >趣味：</li>
+            <li th:field="*{hobby}"></li>
+          </ul>
+          <ul class="done-info">
+            <li >一言：</li>
+            <li th:field="*{word}"></li>
+          </ul>
+        </div>
+     
+        <p class="done-box_contact">自己紹介の内容を変更するには登録内容一覧画面から編集をして頂くか、管理者へお問い合わせください。</p>
+      </div>
+      <div class="done-box_return">
+        <a href="top.html">TOPへ戻る</a>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

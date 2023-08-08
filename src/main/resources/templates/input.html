@@ -12,11 +12,7 @@
     <header>
         <div class = "head_title">JavaTeamDevelopment</div>
     </header>
-        <table>
-        <tr th:if="${validationError}" th:each="error : ${validationError}">
-            <td style="color: red;" th:text="${error}"></td>
-        </tr>
-    </table>
+
     <!-- 内容 -->
     <div class ="main">
         <!-- 「自己紹介の内容を記入してください」と表示する -->
@@ -26,7 +22,10 @@
         <form th:action = "@{/user/create}" th:method = "post" th:object = "${formRequest}">
         <!-- 名前、フリガナ、性別、趣味、一言を表示する-->
         <h2>
-            <ul>
+            <ul class = "errors">
+                <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</td>
+            </ul>
+            <ul class = "check">
                 <li>
                     <a>名前</a>
                     <!-- 「必須 」項目を表示する-->
@@ -37,18 +36,21 @@
                     </b>
                 </li>
             </ul>
-            <ul>
+            <ul class = "errors">
+                <td th:if = "${#fields.hasErrors('kana')}" th:errors = "*{kana}">Kana Error</td>
+            </ul>
+            <ul class = "check">
                 <li>
                     <a>フリガナ</a>
                      <!-- 「必須 」項目を表示する-->
                     <div class = "box">必須</div>
                      <!-- 入力欄を追加する -->
                     <b>
-                        <input type = "text"  th:field = "*{name_sub}">
+                        <input type = "text"  th:field = "*{kana}">
                     </b>
                 </li>
             </ul>
-            <ul>
+            <ul class = "free">
                 <li>
                     <a>性別</a>
                      <!-- 「必須 」の分の余白を調整する-->
@@ -64,7 +66,10 @@
                     </div>
                 </li>
             </ul>
-            <ul>
+            <ul class = "errors">
+                <td th:if="${#fields.hasErrors('hobby')}" th:errors="*{hobby}">Hobby Error</td>
+            </ul>
+            <ul class = "check">
                 <li>
                     <a>趣味</a>
                      <!-- 「必須 」項目を表示する-->
@@ -101,14 +106,14 @@
                     </div>
                 </li>
             </ul>
-            <ul>
+            <ul class = "free">
                 <li>
                     <a>一言</a>
                     <!-- 「必須 」の分の余白を調整する-->
                     <div class = "box_sub"></div>
                     <!-- 入力欄を追加する -->
                     <b>
-                        <textarea th:field = "*{comment}"></textarea>
+                        <textarea th:field = "*{word}" maxlength="300"></textarea>
                     </b>
                 </li>
             </ul>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,34 +26,34 @@
         <div class="done-box_info">
           <ul class="done-info">
             <li >管理番号：</li>
-            <li >th:text="${introduction_id}”</li>
+            <li th:field="*{introduction_id}"></li>
           </ul>
           <ul class="done-info">
             <li >名前：</li>
-            <li >th:text="${name}"</li>
+            <li th:field="*{name}"></li>
           </ul>
           <ul class="done-info">
             <li >フリガナ：</li>
-            <li >th:text="${name_sub}"</li>
+            <li th:field="*{kana}"></li>
           </ul>
           <ul class="done-info">
             <li >性別：</li>
-            <li >th:text="${gender}"</li>
+            <li th:field="*{gender}"></li>
           </ul>
           <ul class="done-info">
             <li >趣味：</li>
-            <li >th:text="${hobby}"</li>
+            <li th:field="*{hobby}"></li>
           </ul>
           <ul class="done-info">
             <li >一言：</li>
-            <li >th:text="${comment}"</li>
+            <li th:field="*{word}"></li>
           </ul>
         </div>
      
         <p class="done-box_contact">自己紹介の内容を変更するには登録内容一覧画面から編集をして頂くか、管理者へお問い合わせください。</p>
       </div>
       <div class="done-box_return">
-        <a href="">TOPへ戻る</a>
+        <a href="top.html">TOPへ戻る</a>
       </div>
     </div>
   </div>

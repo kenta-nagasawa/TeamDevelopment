@@ -18,7 +18,7 @@
         <h1>
             <a>自己紹介登録確認</a>
         </h1>
-        <form th:action = "@{/check}" method="post">
+        <form th:action = "@{/check}" method="post" th:object = "${formRequest}">
         <!-- 名前、フリガナ、性別、趣味、一言を表示する-->
         <h2>
             <ul>
@@ -28,7 +28,7 @@
                     <div class = "box_sub"></div>
                     <!-- 入力欄を追加する -->
                     <b>
-                        <div class = "name" th:text="${name}"></div>
+                        <input class = "name" th:field = "*{name}">
                     </b>
                 </li>
             </ul>
@@ -39,7 +39,7 @@
                      <div class = "box_sub"></div>
                      <!-- 入力欄を追加する -->
                     <b>
-                        <div class = "name_sub" th:text="${name_sub}"></div>
+                        <input class = "kana" th:field = "*{kana}">
                     </b>
                 </li>
             </ul>
@@ -50,7 +50,7 @@
                     <div class = "box_sub"></div>
                     <!-- 男性、女性を選択できるようにする -->
                     <b>
-                        <div class = "gender" th:text="${gender}"></div>
+                        <input class = "gender" th:field = "*{gender}">
                     </b>
                 </li>
             </ul>
@@ -61,7 +61,7 @@
                     <div class = "box_sub"></div>
                     <!-- 趣味を表示し、チェックボックスで複数選べるようにする -->
                     <b>
-                        <div class = "hobby" th:text="${hobby}"></div>
+                        <input class = "hobby" th:field = "*{hobby}">
                     </b>
                 </li>
             </ul>
@@ -72,7 +72,7 @@
                     <div class = "box_sub"></div>
                     <!-- 入力欄を追加する -->
                     <b>
-                        <div class = "comment" th:text="${comment}"></div>
+                        <input class = "word" th:field = "*{word}">
                     </b>
                 </li>
             </ul>

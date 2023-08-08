@@ -58,13 +58,14 @@ li{
     align-items: center;
 }
 /* 名前、フリガナの入力欄を横600px縦30pxにする */
-.name, .name_sub, .gender{
+.name, .kana, .gender{
     width: 600px; 
     height: 20px;
     line-height:20px;
     font-size:20px;
     background-color: white;
     padding:5px;
+    border:none;
 }
 /* 趣味の入力欄を縦60px、横600pxにして、フォントサイズを15pxにする */
 .hobby{
@@ -72,15 +73,19 @@ li{
     height: 70px;
     font-size:20px;
     background-color: white;
+    padding:5px;
+    border:none;
 }
 /* コメント入力欄の大きさを縦150px横600pxにして、入力文字を自動で折り返すようにする */
-.comment{
+.word{
     width: 600px; 
     height: 150px;
     overflow-wrap: break-word;
     word-wrap: break-word;
     font-size:15px;
     background-color:white;
+    padding:5px;
+    border:none;
 }
 /* 名前、フリガナ、性別、趣味、一言の位置を調整する */
 a{
