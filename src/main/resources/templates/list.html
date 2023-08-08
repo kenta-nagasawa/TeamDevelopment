@@ -23,7 +23,7 @@
 		</tr>
 		</thead>
 		<tr  th:each="user : ${userlist}" th:object="${user}" class="align-middle">
-			<td th:text="*{user_id}" class="ID"></td>
+			<td th:href="@{/detail/{id}(id=*{id})}" th:text="*{user_id}" class="ID" ></td>
 			<td th:text="*{name}"></td>
 		</tr>
 		<tr>

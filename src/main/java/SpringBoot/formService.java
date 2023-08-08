@@ -31,4 +31,13 @@ public class formService {
 	public List<user> searchAll(){
 		return formRepository.findAll();
 	}
+	
+	/*
+	 * ユーザー情報　全検索
+	 * @return 検索結果
+	 */
+	public List<introduction> searchAll(){
+		return formRepository.findAll();
+	}
 }
+

@@ -17,35 +17,35 @@
 
 </html>
 <h1>自己紹介</h1>
-<table border="1">
-	<tr>
+<table border="1" th:each="introduction : ${detail}" th:object="${detail}">
+	<tr>00
 		<th>管理番号</th>
-		<td>名前</td>
+		<td th:text="*{user_id}"></td>
 	</tr>
 	<tr>
 		<th>名前</th>
-		<td></td>
+		<td th:text="*{name}"></td>
 	</tr>
 	<tr>
 		<th>フリガナ</th>
-		<td></td>
+		<td th:text="*{kana}"></td>
 	</tr>
 	<tr>
 		<th>性別</th>
-		<td></td>
+		<td th:text="*{gender}"></td>
 	</tr>
 	<tr>
 		<th>趣味</th>
-		<td></td>
+		<td th:text="*{hobby}"></td>
 	</tr>
 	<tr>
 		<th class="comment">一言</th>
-		<td></td>
+		<td th:text="*{hobby}"></td>
 	</tr>
 </table>
 
 <div>
-	<button>戻る</button>
-	<button>編集</button>
+	<button href = "@{/list}">戻る</button>
+	<button href = "@{/input}">編集</button>
 	<button class=deleted>削除</button>
 </div>
